@@ -1,0 +1,43 @@
+﻿{% extends "base.html" %}
+
+
+
+
+{% block content %}
+
+ {% for rekord in rekordy %}
+ <div class="align-center">
+ <b>{{rekord["osoba"]}}</b> pisze:
+ <br><br>
+ 
+ <table border = 5>
+
+ <tr><th>Identyfikator: </th><td colspan=5>{{rekord["id"]}}</td></tr>
+ <tr><th>Tytuł: </td><th colspan=5>{{rekord["title"]}}</td></tr>
+ <tr><th>Treść: </td><th colspan=5>{{rekord["body"]}}</td></tr>
+ <tr><th>Opublikowano: </th><td colspan=5>{{rekord["pub_date"]}}</td></tr>
+<tr>
+<td>
+</td>
+
+<td colspan=5>
+<form method="POST" action="/profile">
+                   
+                    <button name="id" value={{rekord["id"]}}>Usuń</button>
+</form>
+</td>
+ </tr>  
+ </table>
+ </div>
+
+
+<br><br>
+ {% endfor %}
+
+{% endblock %}
+
+
+
+
+ 
+ 

@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="akwarystyka, zaliczenie, python,flask, css, bootstrap, html, js,blog" name="keywords">
+	<meta content="Strona na zaliczenie Programowania w Językach Skryptowych- aplikacja flask" name="description">
+	<meta content="Daniel Szarszewski" name="author">
+    <title>Blog</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- Favicons -->
+  <link href="img/favicon.ico" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Bootstrap CSS File -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<style>
+
+html {
+	background:#505D6E url(https://cdn.pixabay.com/photo/2014/08/01/00/08/pier-407252_960_720.jpg) no-repeat center center fixed; 
+	color:black;
+	min-height:100%;
+	-webkit-background-size: cover;
+	   -moz-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+}
+#footer {
+clear: both;
+position: absolute;
+bottom: 5px;
+margin-top: 10px;
+}
+body {
+	background:transparent;
+	min-height:100%; 	
+	-webkit-font-smoothing: antialiased;
+	-webkit-overflow-scrolling: touch;
+	line-height: 1.5em;
+	font-size:14px;
+	font-family: Helvetica, Arial, sans-serif;
+	color:black;
+	color:rgba(255,255,255,.8); 
+	font-weight: normal;
+}
+/********************************************************/
+/*                    Navigation bar                    */
+/********************************************************/
+.mainmenu { z-index: 999999; width:100%;  padding: 30px 0 0 0;}
+@media (min-width: 768px) {
+	.mainmenu { position: fixed; }
+}
+
+.navbar-toggle {
+	position:relative;
+	float:left;
+	display:block;
+	padding: 15px 15px;
+	background: rgba(255, 255, 255, 0.2); /* kolor guzika */
+	background-image: none;
+	border: 0 none;
+	top:0px; 
+	-webkit-border-radius: 2px;
+	   -moz-border-radius: 2px;
+	        border-radius: 2px;
+	outline: 0;
+	opacity: 1;
+	-webkit-transition: all .45s;
+	   -moz-transition: all .45s;
+	        transition: all .45s;
+	        float: left;
+}
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: white;
+  color:red;
+
+}
+.navbar-toggle .icon-bar + .icon-bar {
+	margin-top: 4px;
+}
+.open .navbar-toggle { 
+	top:-70px; 
+	opacity: 0;  
+}
+.mainmenu .dropdown-menu {
+	top: -14em;
+	left: 0px;
+	font-size: 13px;
+	padding:0;
+	background:red;
+	
+	border:0 none;
+	border-radius: 2px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	display:block;
+	opacity:0;
+	-webkit-transition: all .45s;
+	   -moz-transition: all .45s;
+	        transition: all .45s;
+}
+.mainmenu .dropdown-menu .active { 
+	font-weight:bold;
+	background-color:blue;
+}
+.mainmenu .open .dropdown-menu { 
+	top:2px;
+	opacity:1;
+	background-color:blue;
+}
+.mainmenu .dropdown-menu a { 
+	padding:10px 10px;
+	margin:0;
+	color:red;
+	text-decoration: none;
+	-webkit-border-radius: 2px;
+	   -moz-border-radius: 2px;
+	        border-radius: 2px;
+}
+.mainmenu .dropdown-menu a:hover { 
+	background:rgba(255,255,255,.1);
+	color:white;
+	padding:10px 8px 10px 12px;
+}
+
+
+a:link {
+
+color:Red;
+
+}
+
+
+a:visited {
+
+color:White;
+
+}
+
+
+a:hover {
+
+color:Black;
+
+}
+
+
+a:active {
+
+color:darkred;
+
+}
+a { color:#fff;
+	text-decoration: none;
+	padding:3px;
+	}
+table.wrapping td, .break-word {
+      white-space: normal !important;
+      word-wrap: break-word;
+   }
+   
+table {
+      table-layout:fixed;
+      width:100%;
+   }
+table, th, td {
+align:center;
+      border:0;
+   }
+/*test*/
+button {
+  border-radius: 0;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+[role=button] {
+  cursor: pointer;
+}
+
+select {
+  word-wrap: normal;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+button:not(:disabled),
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled) {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+input[type=radio],
+input[type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+  color: inherit;
+  white-space: normal;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  outline-offset: -2px;
+  -webkit-appearance: none;
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+output {
+  display: inline-block;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Powiększanie zdjęcia po najechaniu */
+img:hover {
+-o-transition: all 0.6s;
+-moz-transition: all 0.6s;
+-webkit-transition: all 0.6s;
+-moz-transform: scale(1.1);
+-o-transform: scale(1.1);
+-webkit-transform: scale(1.3);
+}
+/* Tytuły */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway";
+  font-weight: 300;
+  color: #333;
+}
+
+/* Paragrafy */
+
+p {
+  line-height: 28px;
+  margin-bottom: 25px;
+  color:white;
+}
+
+.centered {
+  text-align: center;
+}
+
+</style>
+  
+</head>
+
+<body>
+<div class="container-fluid">
+
+
+ <nav class="navbar navbar-expand-sm navbar-info bg-transparent text-dark col-sm-12 navbar-fixed-top">
+  
+  
+  		<div class="dropdown bg-transparent text-dark">
+			<button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			<!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
+			<ul class="dropdown-menu bg-transparent text-dark" role="menu">
+				<li><a href="{{ url_for('main.index') }}" class="active">Home</a></li>
+				{% if not current_user.is_authenticated %}
+				<li><a href="{{ url_for('auth.login') }}">Zaloguj sie</a></li>
+				
+				<li><a href="{{ url_for('auth.signup') }}">Rejestracja</a></li>
+				{% endif %}
+				{% if current_user.is_authenticated %}
+				<li><a href="{{ url_for('main.profile') }}" >Profil</a></li>
+				 {% endif %}
+				 {% if current_user.is_authenticated %}
+				<li><a href="{{ url_for('auth.logout') }}" >Wyloguj</a></li>
+				{% endif %}
+				<!--<li><a href="/pracownicy">Lista pracowników</a></li>-->
+			</ul>
+		</div>
+		<div class="navbar-end">
+    <a href="{{ url_for('main.index') }}" class="navbar-item">
+        Strona główna
+    </a>
+    {% if current_user.is_authenticated %}
+    <a href="{{ url_for('main.profile') }}" class="navbar-item">
+        Profil
+    </a>
+    {% endif %}
+    {% if not current_user.is_authenticated %}
+    <a href="{{ url_for('auth.login') }}" class="navbar-item">
+        Zaloguj się
+    </a>
+    <a href="{{ url_for('auth.signup') }}" class="navbar-item">
+        Zarejestruj się
+    </a>
+    {% endif %}
+    {% if current_user.is_authenticated %}
+    <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+        Wyloguj
+    </a>
+    {% endif %}
+	</div>
+</nav>
+
+    
+  
+
+<!-- Sekcja tytuł -->
+<div class="jumbotron bg-transparent text-secondary col-sm-12" style="margin-bottom:0">
+			<h1 align="center">{{tytul}}</h1>
+			<h1 align="center">Witaj {{name}}</h1>
+			
+</div>
+
+<!-- Sekcja ciało -->
+<div>
+<center>
+    <div class="bg-transparent text-secondary col-sm-12">
+               {% block content %}
+               {% endblock %}
+				<p>{{tresc}}</p>
+				
+				
+				
+       </div>
+    </div>
+</center>
+
+
+
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+ {% if current_user.is_authenticated %}
+
+    
+
+	<section>
+    
+        <div class="row bg-transparent text-secondary">
+          <h1>Akwarystyka- Moja pasja</h1>
+          <br>
+          <br>
+		  <br>
+          <br>
+		  <br>
+          <br>
+          <div class="col-lg-12">
+            
+			<img class="centered" src="https://cdn.pixabay.com/photo/2012/03/03/23/54/animal-21668_960_720.jpg" width="40%" alt="akwarium">
+          </div>
+
+          <div class="col-lg-12">
+            <h3>Jak dobrać akwarium?</h3>
+            <br>
+            <!-- ACCORDION -->
+            <div class="accordion ac" id="accordion2">
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+  		                        Wielkość akwarium
+  		                        </a>
+                </div>
+                <!-- /accordion-heading -->
+                <div id="collapseOne" class="accordion-body collapse in">
+                  <div class="accordion-inner">
+                    <p>Tutaj musimy się zastanowić, co będziemy hodować w naszym akwarium: małe zwierzęta jak krewetki karłowate czy małe gatunki ryb, czy ryby ławicowe, czy ryby terytorialne, czy duże gatunki ryb?
+
+Najlepiej wcześniej jest odwiedzić sklep lub sklepy zoologiczne, spisać wszystkie gatunki ryb, które się nam podobają a następnie zapoznać się z ich wymaganiami wodnymi (pH wody, temperatura i twardość wody), usposobieniem, zachowaniem w czasie tarła no i przede wszystkim maksymalnym rozmiarem, jaki mogą osiągnąć. Teraz można zweryfikować nasz wybór do kilku gatunków, które najlepiej będą do siebie pasowały pod wszystkimi, wyżej wymienionymi względami.</p>
+                  </div>
+                  <!-- /accordion-inner -->
+                </div>
+                <!-- /collapse -->
+              </div>
+              <!-- /accordion-group -->
+              <br>
+
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Mówimy NIE dla kuli</a>
+                </div>
+                <div id="collapseTwo" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    <p>W zbiorniku, jakim jest kula, ryba czuje się jak w więzieniu - nie ma miejsca do pływania, nie ma gdzie się schować (jedna roślinka im tego nie umożliwi), nie ma wystarczającej ilości tlenu do oddychania oraz z powodu braku filtra i śmiesznie małej ilości wody (nawet w kulach o pojemności 13 litrów) powoli ulega zatruciu groźnymi związkami azotu przez brak właściwego rozkładu materii organicznej (odchodów i resztek jedzenia). Brak grzałki naraża naszą rybkę na gwałtowne wahania temperatury wody, co także prowadzi do jej powolnej śmierci.</p>
+                  </div>
+                  <!-- /accordion-inner -->
+                </div>
+                <!-- /collapse -->
+              </div>
+              <!-- /accordion-group -->
+              <br>
+
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">Rodzaja szkła</a>
+                </div>
+                <div id="collapseThree" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    <p>Obecnie akwaria wykonywane są z dwóch rodzajów szkła typu OptiWhite oraz standardowego typu Float.
+
+Nazwa szkła typu Float bierze się od sposobu jego produkcji, który wynalazł Alastair Pilkington w 1952 roku, a polega on na produkcji ciągłej wstęgi szkła, której jednakowa grubość uzyskiwana jest dzięki sile grawitacji. Szkło produkowane tą metodą jest prawie idealnie płaskie, gładkie, nie ma zniekształceń, wad optycznych i może osiągnąć grubość od 0,1 mm do 25 mm. Szkło tego typu charakteryzuje się jednak zielonkawą barwą, widoczną szczególnie na oszlifowanych krawędziach. Kolor ten to skutek zawartości tlenków żelaza w masie szklanej. Im grubsze jest szkło, tym bardziej widoczna jest jego zielonkawa barwa.
+
+Alternatywą jest szkło typu OptiWhite, które powstało z myślą użycia go w architekturze oraz aranżacji wnętrz, a jest także z powodzeniem wykorzystywane w akwarystyce. Szkło OptiWhite jest szkłem o obniżonej zawartości żelaza, a co za tym idzie jest super bezbarwne, praktycznie pozbawione zielonkawego zabarwienia. Sprawdza się wszędzie tam, gdzie widoczne mają być krawędzie szkła (np. akwaria otwarte, bez pokryw) lub gdy pożądane jest neutralne, transparentne odwzorowanie zabarwienia (które pozwala wiernie odwzorować kolory np. roślin i ryb). Dodatkowo szkło tego typu charakteryzuje się wyższą przepuszczalnością światła w porównaniu do szkła tradycyjnego (od 1% do kilku % w zależności od grubości tafli) oraz wysoką przepuszczalnością energii słonecznej (ciepła), co w przypadku akwarystyki niekoniecznie jest pożądane. Dostępne grubości szkła w tym przypadku to zakres od 2 mm do 19 mm. Szkło tego typu jest produkowane przez większość największych producentów i może nosić różną nazwę: Optiwhite, Diamant, Ultra Clear itp.</p>
+                  </div>
+                  <!-- /accordion-inner -->
+                </div>
+                <!-- /collapse -->
+              </div>
+              <!-- /accordion-group -->
+              <br>
+
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">Wybór akwarium a proporcje jego wymiarów.</a>
+                </div>
+                <div id="collapseFour" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    <p>Przy wyborze odpowiedniego zbiornika ważne są także odpowiednie proporcje jego wymiarów – zwłaszcza wysokości akwarium i jego szerokości. Najlepiej jak oba te wymiary są sobie równe, a z pewnością różnica między tymi dwoma wymiarami nie powinna być większa niż 10 cm. W ten sposób będziemy mogli uzyskać bez problemu efekt głębi aranżując dno zbiornika. Wysokie akwaria są niepraktyczne (kłopoty przy konserwacji zbiornika), wyglądają nienaturalnie i płasko. Powinniśmy również zwrócić uwagę na długość zbiornika względem jego wysokości. Im wyższe akwarium tym gorzej światło przenika do podłoża i roślin, a także trudniej równomiernie natlenić jego wszystkie poziomy. Wybór wyższego akwarium niż dłuższego również jest niekorzystne ze względu na ryby – mają mniej miejsca do pływania, gdyż poruszają się głównie w poziomie, a nie w pionie.</p>
+                  </div>
+                  <!-- /accordion-inner -->
+                </div>
+                <!-- /collapse -->
+              </div>
+              <!-- /accordion-group -->
+              <br>
+            </div>
+            <!-- Accordion -->
+          </div>
+        </div>
+     
+    <!--/ #features -->
+  </section>
+
+
+
+
+
+<br>
+ {% for rekord in rekordy %}
+
+ <p><b>{{rekord["osoba"]}}</b> pisze:</p>
+ <br><br>
+ <div class="box align-center text-center"">
+ <table border = 0>
+ 
+ <tr><th>Tytuł: </th><td colspan="5">{{rekord["title"]}}</td></tr>
+ <tr><th>Treść: </th><td colspan="5">{{rekord["body"]}}</td></tr>
+ <tr><th>Opublikowano: </th><td colspan="5">{{rekord["pub_date"]}}</td></tr>  
+ </table>
+ </div>
+
+
+<br><br>
+ {% endfor %}
+ 
+ 
+
+<div class="box">
+        <form method="POST" action="/index">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="text" name="tytul" placeholder="Wpisz tytuł" autofocus="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="text" name="post" placeholder="Miejsce na Twoją treść">
+                </div>
+            </div>
+            <button>Wyślij</button>
+        </form>
+
+    </div>
+
+	<br><br>
+	{% endif %}  
+{% endblock %}
+
+
